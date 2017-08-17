@@ -1,5 +1,5 @@
-require './rule_set'
-require './rule'
+require './lib/bodyguards/rule_set'
+require './lib/bodyguards/rule'
 
 module Bodyguards
   class Base
