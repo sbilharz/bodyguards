@@ -6,6 +6,5 @@ Gem::Specification.new do |s|
   s.description = 'Write bodyguard classes for permission management with a minimal DSL'
   s.authors = ['Stefan Bilharz']
   s.email = 'sbilharz@heilmannsoftware.de'
-  s.homepage = 'https://gitlab.aws.local/digibase/bodyguards'
   s.license = 'MIT'
 end
