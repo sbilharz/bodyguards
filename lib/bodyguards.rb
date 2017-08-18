@@ -1,1 +1,1 @@
-require './lib/bodyguards/base'
+require_relative 'bodyguards/base'
