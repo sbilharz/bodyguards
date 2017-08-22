@@ -15,6 +15,10 @@ module Bodyguards
       def permission_to?(feature_name, subject)
         rule_set.evaluate(feature_name, subject)
       end
+
+      def rejection_to?(feature_name, subject)
+        !permission_to?(feature_name, subject)
+      end
     end
   end
 end
