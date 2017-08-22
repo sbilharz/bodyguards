@@ -10,15 +10,15 @@ You create bodyguard classes by inheriting from `Bodyguards::Base` and registeri
 
 `Bodyguards::Base` methods
 * `#permit_to(feature_name, &block)`
-* * Register a rule for the given feature name
-* * The block is evaluated in the scope of the given subject
-* * The result of the block evaluation is returned by `#permission_to?`/`#rejection_to?`
+  * Register a rule for the given feature name
+  * The block is evaluated in the scope of the given subject
+  * The result of the block evaluation is returned by `#permission_to?`/`#rejection_to?`
 * `#permission_to?(feature_name, subject)
-* * Evaluates the rule block registered for the given feature name in the scope of the given subject and returns the result
+  * Evaluates the rule block registered for the given feature name in the scope of the given subject and returns the result
 * `#rejection_to?(feature_name, subject)
-* * Complement to `#permission_to?`
+  * Complement to `#permission_to?`
 * `#any_permission?(subject)`
-* * Returns the result of the first rule block evaluation with a truthy return value
+  * Returns the result of the first rule block evaluation with a truthy return value
 
 You can create as many bodyguard classes as you want, e.g. corresponding to the available contexts of your project.
 
