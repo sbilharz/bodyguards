@@ -12,6 +12,10 @@ module Bodyguards
       rules.fetch(feature_name.to_sym).evaluate(subject)
     end
 
+    def evaluate_all(subject)
+      rules.values.any? { |rule| rule.evaluate(subject) }
+    end
+
     private
 
     attr_reader :rules
