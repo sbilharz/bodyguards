@@ -13,6 +13,8 @@ You create bodyguard classes by inheriting from `Bodyguards::Base` and registeri
   * Register a rule for the given feature name
   * The block is evaluated in the scope of the given subject
   * The result of the block evaluation is returned by `#permission_to?`/`#rejection_to?`
+* `#permit_all(&block)`
+  * Register a global rule that is evaluated before any feature-specific rule by `#permission_to?`/`#rejection_to?` and stops any further evaluation on success
 * `#permission_to?(feature_name, subject)`
   * Evaluates the rule block registered for the given feature name in the scope of the given subject and returns the result
 * `#rejection_to?(feature_name, subject)`
@@ -31,6 +33,10 @@ app/models/user.rb
     def admin?
       [...]
     end
+
+    def super_cool?
+      id == 1
+    end
   end
 ```
 
@@ -39,6 +45,8 @@ app/bodyguards/application_bodyguard.rb
   class AdminBodyguard < Bodyguards::Base
     permit_to :show_dashboard { admin? }
     permit_to :delete_users { admin? }
+
+    permit_all { super_cool? }
   end
 ```
 

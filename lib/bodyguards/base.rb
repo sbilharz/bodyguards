@@ -12,6 +12,10 @@ module Bodyguards
         rule_set.add_rule_for(feature_name, Rule.new(evaluator: block))
       end
 
+      def permit_all(&block)
+        rule_set.add_global_rule(Rule.new(evaluator: block))
+      end
+
       def permission_to?(feature_name, subject)
         rule_set.evaluate(feature_name, subject)
       end
