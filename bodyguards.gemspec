@@ -10,4 +10,10 @@ Gem::Specification.new do |s|
   s.authors = ['Stefan Bilharz']
   s.email = 'sbilharz@heilmannsoftware.de'
   s.license = 'MIT'
+
+  s.required_ruby_version = '>= 2.4'
+
+  s.add_runtime_dependency 'activesupport'
+
+  s.add_development_dependency 'rspec', '~> 3'
 end
