@@ -1,4 +1,4 @@
-require_relative '../lib/bodyguards/base'
+require_relative '../../lib/bodyguards/base'
 
 RSpec.describe Bodyguards::Base do
   context 'when a subclass defines a permission' do
@@ -15,13 +15,13 @@ RSpec.describe Bodyguards::Base do
 
       let(:user) { double(basic_rights?: basic_rights) }
 
-      context 'when the permission evaluates truthy' do
+      context 'when the permission evaluator returns truthy' do
         let(:basic_rights) { true }
 
         it { is_expected.to eq(true) }
       end
 
-      context 'when the permission evaluates falsey' do
+      context 'when the permission evaluator returns falsey' do
         let(:basic_rights) { false }
 
         it { is_expected.to eq(false) }
