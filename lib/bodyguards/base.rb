@@ -30,7 +30,7 @@ module Bodyguards
       end
 
       def rejection_to?(feature_name, *args)
-        !permission_to?(feature_name, permission_evaluation_context(*args))
+        !permission_to?(feature_name, *args)
       end
 
       def any_permission?(*args)
